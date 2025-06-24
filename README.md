@@ -181,4 +181,4 @@ O conteúdo está dividido em dois módulos principais: **UI/UX com Figma** e **
 
 ---
 
-Este plano visa equilibrar teoria e prática, preparando os alunos para demandas do mercado de tecnologia, com foco em habilidades de design de interfaces e gerenciamento de dados. Caso precise de ajustes ou mais detalhes, é só informar!
+Este plano visa equilibrar teoria e prática, preparando os alunos para demandas do mercado de tecnologia, com foco em habilidades de design de interfaces e gerenciamento de dados.
