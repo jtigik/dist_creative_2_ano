@@ -1,0 +1,54 @@
+
+CREATE DATABASE exemplo_db
+
+USE exemplo_db;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO usuarios (nome, email, senha) VALUES ('João Silva', 'joao.silva@email.com', SHA2('senha123', 256)),
+('Maria Oliveira', 'maria.oliveira@email.com', SHA2('abc456', 256)),
+('Carlos Santos', 'carlos.santos@email.com', SHA2('pass789', 256)),
+('Ana Costa', 'ana.costa@email.com', SHA2('minhasenha', 256)),
+('Pedro Lima', 'pedro.lima@email.com', SHA2('123456', 256)),
+('Fernanda Almeida', 'fernanda.almeida@email.com', SHA2('senha456', 256)),
+('Lucas Pereira', 'lucas.pereira@email.com', SHA2('abc123', 256)),
+('Juliana Rodrigues', 'juliana.rodrigues@email.com', SHA2('senha789', 256)),
+('Rafael Ferreira', 'rafael.ferreira@email.com', SHA2('pass123', 256)),
+('Camila Souza', 'camila.souza@email.com', SHA2('minha123', 256)),
+('Thiago Martins', 'thiago.martins@email.com', SHA2('senhaabc', 256)),
+('Beatriz Silva', 'beatriz.silva@email.com', SHA2('123abc', 256)),
+('Gabriel Oliveira', 'gabriel.oliveira@email.com', SHA2('senha4567', 256)),
+('Larissa Santos', 'larissa.santos@email.com', SHA2('abc789', 256)),
+('Mateus Costa', 'mateus.costa@email.com', SHA2('pass456', 256)),
+('Sofia Almeida', 'sofia.almeida@email.com', SHA2('senha321', 256)),
+('Renato Lima', 'renato.lima@email.com', SHA2('minha456', 256)),
+('Patricia Pereira', 'patricia.pereira@email.com', SHA2('abc4567', 256)),
+('Eduardo Rodrigues', 'eduardo.rodrigues@email.com', SHA2('senha987', 256)),
+('Vanessa Ferreira', 'vanessa.ferreira@email.com', SHA2('pass7890', 256)),
+('Marcelo Souza', 'marcelo.souza@email.com', SHA2('123senha', 256)),
+('Carolina Martins', 'carolina.martins@email.com', SHA2('abcminha', 256)),
+('Felipe Silva', 'felipe.silva@email.com', SHA2('senha654', 256)),
+('Amanda Oliveira', 'amanda.oliveira@email.com', SHA2('pass321', 256)),
+('Roberto Santos', 'roberto.santos@email.com', SHA2('minha789', 256)),
+('Jessica Costa', 'jessica.costa@email.com', SHA2('senhaabc1', 256)),
+('André Almeida', 'andre.almeida@email.com', SHA2('1234567', 256)),
+('Mônica Lima', 'monica.lima@email.com', SHA2('abc1234', 256)),
+('Ricardo Pereira', 'ricardo.pereira@email.com', SHA2('senha567', 256)),
+('Tania Rodrigues', 'tania.rodrigues@email.com', SHA2('pass654', 256)),
+('Leandro Ferreira', 'leandro.ferreira@email.com', SHA2('minha321', 256)),
+('Cristina Souza', 'cristina.souza@email.com', SHA2('abc987', 256)),
+('Victor Martins', 'victor.martins@email.com', SHA2('senha234', 256)),
+('Elaine Silva', 'elaine.silva@email.com', SHA2('123abc4', 256)),
+('Daniel Oliveira', 'daniel.oliveira@email.com', SHA2('pass567', 256)),
+('Regina Santos', 'regina.santos@email.com', SHA2('senha890', 256)),
+('Sérgio Costa', 'sergio.costa@email.com', SHA2('abc45678', 256)),
+('Luciana Almeida', 'luciana.almeida@email.com', SHA2('minha1234', 256)),
+('Paulo Lima', 'paulo.lima@email.com', SHA2('senha765', 256)),
+('Valéria Pereira', 'valeria.pereira@email.com', SHA2('pass432', 256));
