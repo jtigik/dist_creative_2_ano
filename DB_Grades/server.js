@@ -33,13 +33,13 @@ app.get('/grades', (req, res) => {
     });
 });
 // UPDATE - Versão corrigida
-app.put('/grades/${id}', (req, res) => {
+app.put('/grades/:id', (req, res) => {
     const { student_name, subject, grade } = req.body;
     
     // Validação de entrada
     if (!student_name || !subject || !grade) {
         return res.status(400).json({ 
-            error: 'student_name, subject e grade são obrigatórios' 
+            error: 'student_name, subject e grade são obrigatórios'
         });
     }
     
