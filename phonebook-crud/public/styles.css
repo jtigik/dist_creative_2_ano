@@ -1,0 +1,74 @@
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        margin-top: 10px;
+    }
+    
+    input {
+        padding: 8px;
+        margin-top: 5px;
+    }
+    
+    button {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    #cancelEdit {
+        background-color: #f44336;
+        display: none;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    li button {
+        background-color: #2196F3;
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+    
+    li button.delete {
+        background-color: #f44336;
+    }
