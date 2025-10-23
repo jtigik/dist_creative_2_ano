@@ -19,7 +19,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     formData.append('email', email);
     formData.append('senha', senha);
 
-    fetch('./cadastro.php', {
+    fetch('cadastro.php', {
         method: 'POST',
         body: formData
     })
