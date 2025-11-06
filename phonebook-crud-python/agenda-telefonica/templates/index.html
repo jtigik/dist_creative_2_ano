@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Telefônica - CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agenda Telefônica</h1>
+
+        <!-- Formulário para Adicionar/Editar -->
+        <form method="POST" class="form">
+            <input type="hidden" name="action" value="{{ 'editar' if edit_contato else 'adicionar' }}">
+            {% if edit_contato %}
+                <input type="hidden" name="id" value="{{ edit_contato[0] }}">
+                <h2>Editar Contato</h2>
+            {% else %}
+                <h2>Adicionar Contato</h2>
+            {% endif %}
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="{{ edit_contato[1] if edit_contato else '' }}" required>
+            
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" value="{{ edit_contato[2] if edit_contato else '' }}" required>
+            
+            <button type="submit">{{ 'Atualizar' if edit_contato else 'Adicionar' }}</button>
+            {% if edit_contato %}
+                <a href="/" class="btn-cancel">Cancelar</a>
+            {% endif %}
+        </form>
+
+        <!-- Lista de Contatos -->
+        <h2>Contatos</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% if contatos %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contato in contatos %}
+                        <tr>
+                            <td>{{ contato[1] }}</td>
+                            <td>{{ contato[2] }}</td>
+                            <td>
+                                <a href="?edit={{ contato[0] }}" class="btn-edit">Editar</a>
+                                <form method="POST" style="display: inline;" onsubmit="return confirm('Excluir?');">
+                                    <input type="hidden" name="action" value="excluir">
+                                    <input type="hidden" name="id" value="{{ contato[0] }}">
+                                    <button type="submit" class="btn-delete">Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Nenhum contato cadastrado.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

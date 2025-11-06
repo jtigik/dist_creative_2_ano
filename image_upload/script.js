@@ -18,13 +18,11 @@ async function saveImageToDatabase(imageData) {
     try {
         const response = await fetch('http://localhost:3000/save-profile', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ image: imageData })
         });
         const data = await response.json();
-        if (data.success) {
+        if (data.ok) {
             alert('Imagem salva com sucesso!');
         } else {
             alert('Erro ao salvar a imagem: ' + data.error);
