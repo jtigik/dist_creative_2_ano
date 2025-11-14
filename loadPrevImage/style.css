@@ -1,0 +1,7 @@
+.preview {
+    margin-top: 10px;
+    max-width: 300px;
+    max-height: 300px;
+    border: 1px solid #ccc;
+    display: none; /* Esconde até carregar a imagem */
+}
